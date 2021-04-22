@@ -1,0 +1,7 @@
+.elevator {
+  background-color: grey;
+  height: 200px;
+  width: 200px;
+  margin: auto;
+  line-height: 200px;
+}
