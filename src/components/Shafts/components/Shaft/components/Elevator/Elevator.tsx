@@ -1,10 +1,5 @@
+import { Elevator as ElevatorProps } from "../../../../../../types";
 import "./Elevator.css";
-
-interface ElevatorProps {
-  currentFloor: number;
-  destinations: number[];
-  direction: -1 | 0 | 1;
-}
 
 export const Elevator = ({
   currentFloor,

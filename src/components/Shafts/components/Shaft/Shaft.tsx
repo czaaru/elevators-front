@@ -1,13 +1,8 @@
 import { Dispatch, SetStateAction } from "react";
+import { Elevator } from "../../../../types";
 import { Elevator as ElevatorComponent } from "./components/Elevator";
 import { EmptyFloor } from "./components/EmptyFloor";
 import "./Shaft.css";
-
-export interface Elevator {
-  currentFloor: number;
-  destinations: number[];
-  direction: -1 | 0 | 1;
-}
 
 interface ShaftProps {
   elevator: Elevator;
@@ -26,14 +21,14 @@ export const Shaft = ({
   const floors = [...Array(numberOfFloors)].map((_, index) =>
     index === currentFloor ? (
       <ElevatorComponent
-        key={"elevator" + currentFloor}
+        key={`elevator-${elevatorIndex}`}
         currentFloor={currentFloor}
         destinations={destinations}
         direction={direction}
       />
     ) : (
       <EmptyFloor
-        key={"floor" + index}
+        key={`shaft-${elevatorIndex}-floor-${index}`}
         floorNumber={index}
         setElevators={setElevators}
       />

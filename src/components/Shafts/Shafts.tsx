@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Elevator } from "./components/Shaft";
+import { Elevator } from "../../types";
 import Shaft from "./components/Shaft";
 import "./Shafts.css";
 
@@ -16,9 +16,7 @@ export const Shafts = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const elevatorStatus = await response.json();
-
-      setElevators(elevatorStatus);
+      setElevators(await response.json());
     };
     fetchElevatorStatus();
   }, []);

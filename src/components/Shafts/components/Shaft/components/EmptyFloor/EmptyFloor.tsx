@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
-import { Elevator } from "../../";
+import { getConfigProperty } from "../../../../../../config";
+import { Elevator } from "../../../../../../types";
 import "./EmptyFloor.css";
 
 interface EmptyFloorProps {
@@ -7,28 +8,29 @@ interface EmptyFloorProps {
   setElevators: Dispatch<SetStateAction<Record<string, Elevator>>>;
 }
 
-const postPickUp = async (floor = {}) => {
-  const BACKEND_URL =
-    "https://czaru-elevator-api.herokuapp.com/elevators/pickup";
-  const response = await fetch(BACKEND_URL, {
-    method: "POST", // *GET, POST, PUT, DELETE, etc.
-    mode: "cors", // no-cors, *cors, same-origin
-    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: "same-origin", // include, *same-origin, omit
+const BACKEND_URL = getConfigProperty("BACKEND_URL");
+
+const postPickUp = async (body = {}, endpoint = BACKEND_URL) => {
+  const response = await fetch(`${endpoint}/elevators/pickup`, {
+    method: "POST",
+    mode: "cors",
+    cache: "no-cache",
+    credentials: "same-origin",
     headers: {
       "Content-Type": "application/json",
-      // 'Content-Type': 'application/x-www-form-urlencoded',
     },
-    redirect: "follow", // manual, *follow, error
+    redirect: "follow",
     referrerPolicy: "no-referrer",
-    body: JSON.stringify(floor),
+    body: JSON.stringify(body),
   });
-  console.log("inside postPickUp: ", floor);
+
   return response.json();
 };
 
-const pickUpButton = async (floor: number, setElevators: any) => {
-  console.log("Pick me up. I'm on the floor ", floor);
+const pickUpButton = async (
+  floor: number,
+  setElevators: Dispatch<SetStateAction<Record<string, Elevator>>>
+) => {
   setElevators(await postPickUp({ floor }));
 };
 
