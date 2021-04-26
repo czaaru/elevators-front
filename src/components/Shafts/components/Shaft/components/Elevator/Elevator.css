@@ -1,0 +1,31 @@
+.elevator {
+  display: flex;
+  flex-direction: row;
+  background-color: #3d3d3b;
+  height: 80px;
+  width: 110px;
+  border-bottom: 5px solid #262729;
+}
+
+.elevator-doors {
+  display: flex;
+  flex-direction: row;
+  background-color: #393c42;
+  height: 70px;
+  width: 70px;
+  margin-top: 5px;
+  border: 1px solid #262729;
+  border-bottom: 0;
+}
+
+.elevator-doors-open {
+  height: 69px;
+  width: 10px;
+  border: 1px solid #262729;
+  border-bottom: 0;
+}
+
+.elevator-inside {
+  background-color: grey;
+  width: 50px;
+}

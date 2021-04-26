@@ -1,0 +1,53 @@
+.floor {
+  display: flex;
+  flex-direction: row;
+  background-color: #3d3d3b;
+  height: 80px;
+  width: 110px;
+  border-bottom: 5px solid #262729;
+}
+
+.floor-doors {
+  display: flex;
+  flex-direction: row;
+  background-color: #393c42;
+  height: 70px;
+  width: 70px;
+  margin-top: 5px;
+  border: 1px solid #262729;
+  border-bottom: 0;
+}
+
+.floor-doors > div {
+  height: 69px;
+  width: 34px;
+  border: 1px solid #262729;
+  border-bottom: 0;
+}
+
+.floor-panel {
+  height: 80px;
+  width: 40px;
+  margin-top: 5px;
+}
+
+.floor-panel > p {
+  color: #d4d4d4;
+  width: 14px;
+  height: 22px;
+  margin: 0 auto;
+  border: 1px solid #262729;
+}
+
+.pick-up-button {
+  background-color: #3d3d3b;
+  height: 10px;
+  width: 7px;
+  border: 1px solid #262729;
+  cursor: pointer;
+  margin: auto;
+}
+
+.pick-up-button:hover {
+  background-color: #d4d4d4;
+}

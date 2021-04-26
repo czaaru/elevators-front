@@ -1,0 +1,5 @@
+.shafts {
+  display: flex;
+  flex-direction: row;
+  background-color: #3d3d3b;
+}

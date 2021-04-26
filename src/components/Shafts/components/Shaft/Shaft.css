@@ -1,0 +1,14 @@
+.shaft {
+  display: flex;
+  flex-direction: column-reverse;
+  background-color: #3d3d3b;
+  color: #d4d4d4;
+  width: 110px;
+  justify-content: flex-end;
+  border-bottom: 5px solid #262729;
+}
+
+.shaft > p {
+  border-bottom: 5px solid #262729;
+  padding: 10px 0;
+}

@@ -2,4 +2,26 @@
 
 .app {
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.main-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 70%;
+  min-height: 100%;
+}
+
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #3d3d3b;
+  color: #d4d4d4;
+  width: 30%;
+  min-height: 682px;
+  right: 0;
 }

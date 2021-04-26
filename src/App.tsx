@@ -1,10 +1,13 @@
 import "./App.css";
-import Shaft from "./components/Shaft";
+import Shafts from "./components/Shafts";
 
 function App() {
   return (
     <div className="app">
-      <Shaft />
+      <section className="main-section">
+        <Shafts />
+      </section>
+      <div className="side-bar">Control Panel</div>
     </div>
   );
 }
