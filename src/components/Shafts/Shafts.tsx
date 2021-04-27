@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction, useEffect } from "react";
+import { getConfigProperty } from "../../config";
 import { Elevator } from "../../types";
 import Shaft from "./components/Shaft";
 import "./Shafts.css";
@@ -8,12 +9,12 @@ interface ShaftProps {
   setElevators: Dispatch<SetStateAction<Record<string, Elevator>>>;
 }
 
+const backendUrl = getConfigProperty("BACKEND_URL");
+
 export const Shafts = ({ setElevators, elevators }: ShaftProps) => {
   useEffect(() => {
-    const fetchElevatorStatus = async () => {
-      const BACKEND_URL = "https://czaru-elevator-api.herokuapp.com/elevators";
-
-      const response = await fetch(BACKEND_URL);
+    const fetchElevatorStatus = async (endpoint = backendUrl) => {
+      const response = await fetch(`${endpoint}/elevators`);
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
