@@ -1,19 +1,41 @@
-import AddElevatorButton from "./components/AddElevatorButton";
-import ResetButton from "./components/ResetButton/";
-import StepButton from "./components/StepButton";
-import UpdateButton from "./components/UpdateButton";
+import { Dispatch, SetStateAction } from "react";
+import { Elevator } from "../../types";
+import ControlPanelButton from "./components/";
+import {
+  createAddElevatorFetch,
+  createResetFetch,
+  createStepFetch,
+} from "./components/fetch";
 import "./ControlPanel.css";
 
-export const ControlPanel = () => {
-  const setElevators = console.log("Hello");
+interface ControlPanelProps {
+  elevatorsCount: number;
+  setElevators: Dispatch<SetStateAction<Record<string, Elevator>>>;
+}
+
+const maxElevatorCount = 16;
+
+export const ControlPanel = ({
+  setElevators,
+  elevatorsCount,
+}: ControlPanelProps) => {
   return (
     <div className="control-panel">
       <p>Control Panel</p>
       <div className="control-panel-buttons">
-        <AddElevatorButton />
-        <UpdateButton />
-        <StepButton />
-        <ResetButton setElevators={setElevators} />
+        <ControlPanelButton
+          onClick={createAddElevatorFetch({ id: elevatorsCount }, setElevators)}
+          disabled={elevatorsCount >= maxElevatorCount}
+          text="Add Elevator"
+        />
+        <ControlPanelButton
+          onClick={createStepFetch(setElevators)}
+          text="Step"
+        />
+        <ControlPanelButton
+          onClick={createResetFetch(setElevators)}
+          text="Reset"
+        />
       </div>
     </div>
   );

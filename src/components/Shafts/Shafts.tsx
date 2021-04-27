@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect } from "react";
 import { Elevator } from "../../types";
 import Shaft from "./components/Shaft";
 import "./Shafts.css";
 
-export const Shafts = () => {
-  const [elevators, setElevators] = useState<Record<string, Elevator>>({});
+interface ShaftProps {
+  elevators: Record<string, Elevator>;
+  setElevators: Dispatch<SetStateAction<Record<string, Elevator>>>;
+}
 
+export const Shafts = ({ setElevators, elevators }: ShaftProps) => {
   useEffect(() => {
     const fetchElevatorStatus = async () => {
       const BACKEND_URL = "https://czaru-elevator-api.herokuapp.com/elevators";
@@ -19,7 +22,7 @@ export const Shafts = () => {
       setElevators(await response.json());
     };
     fetchElevatorStatus();
-  }, []);
+  }, [setElevators]);
 
   return (
     <div className="shafts">
