@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
-import { getConfigProperty } from "../../../config";
-import { Elevator } from "../../../types";
+import { getConfigProperty } from "../../config";
+import { Elevator } from "../../types";
 
 const backendUrl = getConfigProperty("BACKEND_URL");
 

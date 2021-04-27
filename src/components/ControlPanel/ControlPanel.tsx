@@ -1,11 +1,11 @@
 import { Dispatch, SetStateAction } from "react";
 import { Elevator } from "../../types";
-import ControlPanelButton from "./components/";
+import ControlPanelButton from "./components/ControlPanelButton";
 import {
   createAddElevatorFetch,
   createResetFetch,
   createStepFetch,
-} from "./components/fetch";
+} from "./fetch";
 import "./ControlPanel.css";
 
 interface ControlPanelProps {
