@@ -12,9 +12,15 @@ _NOTE_: If it does not work at first, retry - heroku might be starting up.
 
 ## Core Concepts
 
-Elevators Front is a React app that uses [Elevators API](https://github.com/czaaru/elevators-api) as backend app.
+Elevators Front is a visual interface for [Elevators API](https://github.com/czaaru/elevators-api). It supports adding up to 16 elevators and allows calling a pickup from a floor, moving a elevator step forward and resetting simulation to its initial state.
 
 ## Getting started
+Set node version and install dependencies.
+
+```sh
+nvm use
+yarn
+```
 
 To start this app locally run the following command and open your web browser at http://localhost:3000.
 
