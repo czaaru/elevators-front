@@ -22,8 +22,6 @@ export const createAddElevatorFetch = (
     body: JSON.stringify(body),
   });
 
-  console.log("response:", response);
-
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
@@ -47,8 +45,6 @@ export const createStepFetch = (
     referrerPolicy: "no-referrer",
   });
 
-  console.log("response:", response);
-
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
@@ -71,8 +67,6 @@ export const createResetFetch = (
     redirect: "follow",
     referrerPolicy: "no-referrer",
   });
-
-  console.log("response:", response);
 
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
