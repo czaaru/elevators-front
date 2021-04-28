@@ -4,9 +4,10 @@ cache:
     - node_modules
 
 stages:
-  - test
+  - verify
 
 jobs:
   include:
-    - stage: test
-      script: yarn test
+    - stage: verify
+      script: yarn test:ci
+      script: yarn typecheck
