@@ -27,6 +27,7 @@
     "test": "react-scripts test",
     "test:ci": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
+    "typecheck": "tsc --noEmit",
     "postintall": "husky install"
   },
   "eslintConfig": {
