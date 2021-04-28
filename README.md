@@ -33,3 +33,5 @@ The test is configured with Jest. To start testing, run the command below.
 ```sh
 yarn test
 ```
+
+_NOTE_: To run with local version of backend replace `BACKEND_URL` property inside of `src/config.ts`. 
